@@ -28,6 +28,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
+      - uses: microsoft/setup-msbuild@v1.1
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
@@ -50,6 +51,8 @@ jobs:
     needs: test
     steps:
       - uses: actions/checkout@v2
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.1
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
