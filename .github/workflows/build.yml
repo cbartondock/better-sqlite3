@@ -31,6 +31,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
       - run: npm install --ignore-scripts
       - run: npm run build-debug
       - run: npm test
