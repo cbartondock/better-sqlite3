@@ -74,7 +74,7 @@ jobs:
         run: npx --no-install prebuild -r electron -t 17.0.0 -t 18.0.0 -t 19.0.0 -t 20.0.0 -t 21.0.0 -t 22.0.0 -t 23.0.0 -t 24.0.0 --include-regex 'better_sqlite3.node$' --arch ia32 -u ${{ secrets.GITHUB_TOKEN }}
       - if: matrix.os == 'macos-latest'
         run: npx --no-install prebuild -r electron -t 17.0.0 -t 18.0.0 -t 19.0.0 -t 20.0.0 -t 21.0.0 -t 22.0.0 -t 23.0.0 -t 24.0.0 --include-regex 'better_sqlite3.node$' --arch arm64 -u ${{ secrets.GITHUB_TOKEN }}
-      - if: matrix.os == 'ubuntu-latest'
+      - if: matrix.os == 'ubuntu-20.04'
         run: |
           sudo apt-get update
           sudo apt-get install gcc-multilib g++-multilib
